@@ -12,6 +12,7 @@ sizeB = [1 Inf];
 B = fscanf(fileID1, formatSpec1, sizeB);
 B = B';
 fclose(fileID1);
-
-%histogram(A);
+figure(1);
+histogram(A);
+figure(2);
 plot (A, B, 'k.');

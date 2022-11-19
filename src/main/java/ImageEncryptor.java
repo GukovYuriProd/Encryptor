@@ -31,7 +31,7 @@ public class ImageEncryptor {
         byte[] output_bitmap = new byte[pixels_count];
         //заполняем шапку файла
         System.arraycopy(bitmap, 0, output_bitmap, 0, 54);
-        //примем размерность нашего блока данных за 48 битов,
+
         //то есть это 6 байтов, кодирующие 2 последовательных пикселя
         int data_block = 30; //ДЛИНА БЛОКА ДАННЫХ
         for (int index = 54; index < pixels_count; index += data_block){
@@ -64,7 +64,7 @@ public class ImageEncryptor {
         int rounds = 5;
         for (int index = 0; index < rounds; index++){
             output = S_BlockOperation(output);
-            output = P_BlockOperation(output, index+2);
+            output = P_BlockOperation(output, index+3);
         }
         return output;
     }
